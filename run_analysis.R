@@ -73,10 +73,10 @@ dataset1 <- rbind(dataset_test, dataset_train)
 ##         each measurement.
 ##
 # Identify the column numbers of features which measure a mean or standard deviation:
-#    - use grepl to search for features whose names contain 'mean()' or 'std()' or 'meanFreq()'
+#    - use grepl to search for features whose names contain 'mean()' or 'std()'
 #    - use that result to subset the feature_index numbers to give us the column numbers to subset.
-# There should be 33 mean, 33 std, 13 meanFreq variables for a total of 79, plus 2 meta-data (subject,activity).
-mean_or_std_names <- grepl("mean\\(\\)|std\\(\\)|meanFreq\\(\\)", feature_names$varname)
+# There should be 33 mean, 33 std variables for a total of 66, plus 2 meta-data (subject,activity).
+mean_or_std_names <- grepl("mean\\(\\)|std\\(\\)", feature_names$varname)
 mean_or_std_columns <- feature_names$feature_index[mean_or_std_names]
 # Convert from an 'index into the list of features' to a 'column number in our dataset', i.e.
 # accounting for the (2) columns of meta_data at the start.
@@ -114,4 +114,4 @@ dataset5 <- aggregate(x = dataset4[,3:ncol(dataset4)],
 	FUN = mean)
 names(dataset5)[1] <- "activity"
 names(dataset5)[2] <- "subject"
-write.table(dataset5, "tidy.txt", row.name=FALSE)
+write.table(dataset5, "tidy.txt", row.name=FALSE, quote=FALSE, sep="\t")

@@ -4,20 +4,21 @@ getcleandata
 Repo for Coursera "Getting and Cleaning Data" of 07Aug2014
 
 This repo contains an R script (run_analysis.R) which will read
-in data sets from the UCI Human Activity Recognition Using Smartphones
-project (http://archive.ics.uci.edu/ml/machine-learning-databases/00240/UCI%20HAR%20Dataset.zip) and produce a tidy data set appropriate
-for our analysis.
+in data sets from the UCI Human Activity Recognition Using
+Smartphones project
+(http://archive.ics.uci.edu/ml/machine-learning-databases/00240/UCI%20HAR%20Dataset.zip)
+and produce a tidy data set appropriate for our analysis.
 
 The created tidy data set has these characteristics beyond the
 original data set:
 
 1. The training and test data sets are unified into a single data set.
 
-2. Of the original set of 561 measurements per observation, only the 79
+2. Of the original set of measurements per observation, only the 66
    calculated values representing either a mean or standard deviation
-   are represented in the tidy data set.  Note that this includes mean
-   values in both the time domain (original feature names containing
-   'mean()') and the frequency domain (feature names with 'meanFreq()').
+   are represented in the tidy data set.  Note that this includes
+   values in both the time domain (original feature names beginning
+   with 't') and the frequency domain (names beginning with 'f').
 
 3. Each activity is represented by a descriptive character string
    instead of an encoded number.
